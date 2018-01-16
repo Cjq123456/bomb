@@ -31,6 +31,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile group: 'tk.mybatis', name: 'mapper', version: '3.3.6'
+	compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.1.6'
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

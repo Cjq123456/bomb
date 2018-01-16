@@ -1,4 +1,4 @@
-package cn.cjq.bomb;
+package cn.cjq.bomb.util;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
