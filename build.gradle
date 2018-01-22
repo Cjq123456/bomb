@@ -30,8 +30,11 @@ dependencies {
 	compile('org.springframework.session:spring-session')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("org.springframework.boot:spring-boot-starter-data-rest")
+
 	compile group: 'tk.mybatis', name: 'mapper', version: '3.3.6'
 	compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.1.6'
+	compile group: 'org.springframework.data', name: 'spring-data-mongodb', version: '1.10.7.RELEASE'
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
