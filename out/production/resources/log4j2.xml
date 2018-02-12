@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <!-- 常量引用 -->
+    <properties>
+        <property name="LOG_HOME">/home/log</property>
+        <property name="FORMAT">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</property>
+    </properties>
+
+    <appenders>
+        <console name="console" target="system_out">
+            <!-- appender级别的日志过滤 -->
+            <!-- <thresholdFilter level="info" onMatch="accept" onMismatch="deny"/> -->
+            <patternLayout pattern="${FORMAT}" />
+        </console>
+    </appenders>
+
+    <loggers>
+        <logger name="org.apache.http" level="warn" />
+        <!-- Spring -->
+        <logger name="org.springframework" level="WARN" />
+        <!-- mybatis loggers -->
+        <logger name="com.ibatis" level="DEBUG" />
+        <logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG" />
+        <logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG" />
+        <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG" />
+        <!-- sql loggers -->
+        <logger name="java.sql.Connection" level="DEBUG"  additivity="true"/>
+        <logger name="java.sql.Statement" level="DEBUG" additivity="true" />
+        <logger name="java.sql.PreparedStatement" level="=debug,stdout"  additivity="true"/>
+        <logger name="java.sql.ResultSet" level="DEBUG"  additivity="true"/>
+        <!-- General Apache libraries -->
+        <logger name="org.apache" level="WARN" />
+        <!-- Default Shiro logging -->
+        <logger name="org.apache.shiro" level="WARN" />
+        <!-- Disable verbose logging -->
+        <logger name="org.apache.shiro.util.ThreadContext" level="WARN" />
+        <logger name="org.apache.shiro.cache.ehcache.EhCache" level="WARN" />
+        <!-- 对包进行更详细的配置 -->
+        <!-- additivity表示是否追加,防止重复,因为root已经接收过一次了 -->
+        <logger name="cn.xydata" level="DEBUG" additivity="false">
+            <appender-ref ref="console" />
+        </logger>
+    </loggers>
+
+</configuration>
